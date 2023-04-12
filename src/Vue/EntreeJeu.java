@@ -38,9 +38,6 @@ public class EntreeJeu extends JFrame {
 	 * Le clic sur le bouton ouvre la fenêtre "Arene".
 	 */
 	private void BtnStart() {
-		/**Arene arene = new Arene();
-		arene.setVisible(true);
-		this.dispose();*/
 		
 		this.controle.evenementEntreeJeu("serveur");
 	}
@@ -49,9 +46,7 @@ public class EntreeJeu extends JFrame {
 	 * Le clic sur le bouton ouvre la fenêtre "ChoixJoueur".
 	 */
 	private void BtnConnect() {
-		/**ChoixJoueur choix = new ChoixJoueur();
-		choix.setVisible(true);
-		this.dispose();*/
+		
 		this.controle.evenementEntreeJeu(this.txtServer.getText());
 	}
 
@@ -119,7 +114,6 @@ public class EntreeJeu extends JFrame {
 		btnConnect.setFont(new Font("Arial Black", Font.BOLD, 18));
 		btnConnect.setBounds(323, 141, 147, 36);
 		contentPane.add(btnConnect);
-		
 		/**
 		 * valorisons la propriété
 		 */
