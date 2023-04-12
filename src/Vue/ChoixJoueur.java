@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Controleur.Controle;
+import Controleur.Global;
 
 import java.awt.Toolkit;
 import javax.swing.JLabel;
@@ -23,7 +24,7 @@ import java.net.URL;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class ChoixJoueur extends JFrame {
+public class ChoixJoueur extends JFrame implements Global{
 
 	private JPanel contentPane;
 
@@ -41,34 +42,11 @@ public class ChoixJoueur extends JFrame {
 	 */
 	private Controle controle;
 
-	/**
-	 * numbre de personnage
-	 */
-	private int num_perso = 3;
-
-	/**
-	 * Etat du personnage
-	 */
-	private String MARCHE = "marche";
-
-	/**
-	 * numero étape d'état du personnage
-	 */
-	private int NB_ETAT_PERSONNAGE = 1;
+	
 	/**
 	 * numero du personnage selectionner
 	 */
 	private int nbPerso;
-
-	/**
-	 * direction du personnage
-	 */
-	private int DIRECTION = 1;
-	
-	/**
-	 * extension de l'image des personnages
-	 */
-	private String EXTENSION = ".gif";
 
 	/**
 	 * Clic sur la fleche "precedent" pour afficher le personnage precedent
