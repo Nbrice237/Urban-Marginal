@@ -73,4 +73,35 @@ public interface Global {
 	 * extension de l'image des personnages
 	 */
 	String EXTENSION = ".gif";
+	/**
+	 * taille de la zonne de combat arene
+	 */
+	int largeurArene = 800;
+	int hauteurArene = 600;
+
+	/**
+	 * taille zone de combat du murs
+	 */
+	int largeurMur = 40;
+	int hauteurMur = 35;
+	/**
+	 * chemin de l'image des murs
+	 */
+	String MURS = "murs//mur" + EXTENSION;
+	/**
+	 * nombre de mur dans l'arene
+	 */
+	int nbMur = 20;
+	/**
+	 * permet de controler l'ajout des murs dans l'arene
+	 */
+	String AjoutMur = "ajout mur";
+	/**
+	 * permet d'ajouter les murs dans l'arene cote client
+	 */
+	String AjoutPanelMur = "ajout panel murs";
+	/**
+	 * chemin du fond de l'arene
+	 */
+	String CheminArene = "fonds\\fondarene.jpg";
 }

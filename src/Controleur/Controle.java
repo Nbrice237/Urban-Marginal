@@ -10,6 +10,9 @@ import outils.connexion.ServeurSocket;
 import outils.connexion.AsyncResponse;
 import outils.connexion.ClientSocket;
 import outils.connexion.Connection;
+
+import javax.swing.JPanel;
+
 import Modele.Jeu;
 import Modele.JeuClient;
 import Modele.JeuServeur;
@@ -66,6 +69,7 @@ public class Controle implements AsyncResponse, Global {
 			this.lejeu = new JeuServeur(this);
 			this.frmEntreeJeu.dispose();
 			this.frmArene = new Arene();
+			((JeuServeur) this.lejeu).constructionMurs();
 			this.frmArene.setVisible(true);
 
 		} else {
@@ -80,6 +84,32 @@ public class Controle implements AsyncResponse, Global {
 		this.frmChoixJoueur.dispose();
 		this.frmArene.setVisible(true);
 		((JeuClient) this.lejeu).envoi(PSEUDO + SEPARATEUR + pseudo + SEPARATEUR + numPerso);
+	}
+    /**
+     * 
+     * @param ordre
+     * @param info
+     */
+	public void evenementJeuServeur(String ordre, Object info) {
+         switch(ordre) {
+         case AjoutMur:
+        	 frmArene.ajoutMurs(info);
+        	 break;
+         case AjoutPanelMur:
+        	 this.lejeu.envoi((Connection)info, this.frmArene.getJpnMurs());
+        	 break;
+        	 
+         }
+	}
+	/**
+	 * 
+	 */
+	public void evenementJeuClient(String ordre, Object info) {
+		switch(ordre) {
+		case AjoutPanelMur:
+			this.frmArene.setJpnMurs((JPanel)info);
+			break;
+		}
 	}
 
 	/**
